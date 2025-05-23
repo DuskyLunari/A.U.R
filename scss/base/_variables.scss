@@ -1,0 +1,39 @@
+// Import fonts
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Game+Font&family=Roboto+Mono:wght@400;700&display=swap');
+
+// Font variables
+$font-press-start: 'Press Start 2P', cursive;
+$font-game: 'Game Font', cursive;
+$font-roboto-mono: 'Roboto Mono', monospace;
+
+// Layout Variables
+$sidebar-expanded: 150px;    // Expanded sidebar width
+$sidebar-collapsed: 55px;   // Collapsed sidebar width
+$header-height: 60px;       // Header height
+$container-max-width: 1200px; // Maximum container width
+$container-padding: 1rem;   // Container padding
+
+// Color Variables
+$header-bg: #222;         // Dark header background
+$sidebar-bg: #222;        // Darker sidebar background
+$app-bg: #2c2c2c;           // Main app background
+$border-accent: #bdbdbd;
+$text-color: #ffffff;          // Default text color
+
+// Game Variables
+$sprite-size: 64px;          // Default sprite size
+$animation-speed: 0.3s;      // Default animation speed
+$transition-speed: 0.3s;     // Default transition speed
+$transition-ease: cubic-bezier(0.4, 0, 0.2, 1); // Default transition timing function
+
+// Typography Variables (from fonts.scss)
+$font-size-h1: 2.5rem;
+$font-size-h2: 2rem;
+$font-size-h3: 1.75rem;
+$font-size-h4: 1.5rem;
+$font-size-h5: 1.25rem;
+$font-size-h6: 1rem;
+$font-size-body: 1rem;
+$font-size-number: 1.25rem;
+$line-height: 1.5;
+$letter-spacing: 0.05em;

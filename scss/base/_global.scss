@@ -1,0 +1,48 @@
+
+@use "variables" as *;
+@use "mixins";
+
+// Reset styles
+html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: $font-press-start;
+    line-height: $line-height;
+    color: $text-color;
+    background-color: $app-bg;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul, ol, li {
+    list-style: none;
+    padding-left: 0;
+}
+
+// Layout utilities
+.active {
+    display: block;
+}
+
+.hidden {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease-out;
+}
+
+// Color utilities
+.bg-header { background-color: $header-bg; }
+.bg-sidebar { background-color: $sidebar-bg; }
+.bg-app { background-color: $app-bg; }

@@ -4,51 +4,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="scss/styles.css">
     <title>A.U.R</title>
 </head>
 
 <body>
     <header>
+        <button>Menu</button>
+        <h1>A.U.R</h1>
         <div>
-            <button>Menu</button>
-            <h1>A.U.R</h1>
-            <div>
-                <button>Options</button>
-                <button>Player</button>
-            </div>     
+            <button>Options</button>
+            <button>Player</button>
         </div>
     </header>
-    <main>
-        <aside>
-            <nav>
-                <ul>
-                    <li><a href="">Town</a></li>
-                    <li><a href="">Battle</a></li>
-                    <li><a href="">Professions</a></li>
-                </ul>
-            </nav>
-        </aside>
-        <section id="Town">
+    <aside class="sidebar">
+        <nav>
+            <button id="sidebar-collapse" data-state="expanded">
+                <span id="collapse-icon">◀</span>
+                <span class="label">Collapse</span>
+            </button>
+
+            <button data-section="town"><span>🏰</span><span class="label">Town</span></button>
+            <button data-section="battle"><span>⚔️</span><span class="label">Battle</span></button>
+            <button data-section="professions"><span>🛠️</span><span class="label">Professions</span></button>
+        </nav>
+    </aside>
+    <main id="app">
+        <section id="Town" class="active">
             <div class="town-container">
+                <h2>Town</h2>
+                <h3>What do you want to do?</h3>
+                <div>
+                    <button id="merchant">Talk to the merchant</button>
+                    <button id="battle">Go to the battle</button>
+                    <button id="professions">Go to the professions</button>
+                </div>
 
             </div>
         </section>
-        <section id="Battle">
+        <section id="Battle" class="hidden">
+            <h2>Battle</h2>
             <div class="battle-container">
-                
+                <div id="battle-background" src=""></div>
+                <div id="battle-top"></div>
+                <div id="battle-sprites">
+                    <div id="battle-player" src=""></div>
+                    <div id="battle-enemy" src=""></div>
+                </div>
+                <div id="battle-bottom">
+
+                </div>
+
             </div>
         </section>
-        <section id="Professions">
+        <section id="Professions" class="hidden">
+            <h2>Professions</h2>
             <div class="professions-container">
-                
+
             </div>
         </section>
+
+        </div>
     </main>
-    <footer>
-
-    </footer>
-
-    </footer>
+    <script src="js/layout/sidebarHandler.js"></script>
 </body>
 
 </html>
