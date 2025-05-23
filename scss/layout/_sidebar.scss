@@ -1,0 +1,88 @@
+@use "../base/variables" as *;
+@use "../base/mixins";
+
+aside {
+    position: absolute;
+    top: calc(0px + #{$header-height});
+    left: 0;
+    background: $sidebar-bg;
+    display: flex;
+    flex-direction: column;
+    transition: width $transition-speed $transition-ease,
+                opacity $transition-speed ease-out,
+                visibility $transition-speed ease-out;
+    z-index: 1;
+    height: calc(100vh - #{$header-height});
+    border-right: 1px solid $border-accent;
+
+    // Expanded state (default)
+    &.expanded {
+        width: $sidebar-expanded;
+    }
+
+    // Collapsed state
+    &.collapsed {
+        width: $sidebar-collapsed;
+    }
+
+    // Hidden state
+    &.hidden {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    // Label animation
+    .label {
+        opacity: 0;
+        transition: opacity $transition-speed ease-out;
+    }
+
+    // Label visibility
+    &.collapsed .label {
+        display: none;
+    }
+
+    &.expanded .label {
+        opacity: 1;
+    }
+
+    nav {
+        button {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: none;
+            border: none;
+            color: $text-color;
+            padding: 1rem;
+            width: 100%;
+            text-align: left;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+
+            // Label container for better animation control
+            .label-container {
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                pointer-events: none;
+            }
+        }
+    }
+
+    // Add class for smoother transitions
+    &.expanding {
+        .label {
+            opacity: 0;
+        }
+    }
+
+    &.expanded {
+        .label {
+            opacity: 1;
+        }
+    }
+}
