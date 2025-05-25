@@ -1,0 +1,58 @@
+@use "../base/variables" as *;
+@use "../base/mixins";
+
+// Layout container
+.layout-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    position: relative;
+}
+
+// Main content area
+main {
+    flex: 1;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    margin-top: $header-height;
+}
+
+// Sidebar states
+.sidebar {
+    position: fixed;
+    top: $header-height;
+    bottom: 0;
+    left: 0;
+    z-index: 900;
+    background: $sidebar-bg;
+    transition: width $transition-speed $transition-ease;
+    overflow-y: auto;
+
+    &.hidden {
+        width: 0;
+    }
+
+    &.collapsed {
+        width: $sidebar-collapsed;
+    }
+
+    &.expanded {
+        width: $sidebar-expanded;
+    }
+}
+
+// App margin based on sidebar state
+.sidebar.hidden ~ main {
+    margin-left: 0;
+}
+
+.sidebar.collapsed ~ main {
+    margin-left: $sidebar-collapsed;
+}
+
+.sidebar.expanded ~ main {
+    margin-left: $sidebar-expanded;
+}

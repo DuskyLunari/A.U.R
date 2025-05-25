@@ -6,6 +6,7 @@
 html {
     box-sizing: border-box;
     scroll-behavior: smooth;
+    overflow: hidden;
 }
 
 *, *::before, *::after {
@@ -24,6 +25,11 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
 
 ul, ol, li {
@@ -41,8 +47,3 @@ ul, ol, li {
     opacity: 0;
     transition: opacity 0.3s ease-out;
 }
-
-// Color utilities
-.bg-header { background-color: $header-bg; }
-.bg-sidebar { background-color: $sidebar-bg; }
-.bg-app { background-color: $app-bg; }
